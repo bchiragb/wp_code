@@ -1,0 +1,24 @@
+#my-contact-form .form-section{
+	margin: 20px 0;
+}
+
+#my-contact-form input[type="text"]{
+	width: 100%;
+}
+
+
+span.error {
+    color: red;
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: block;
+    margin-top: 10px;
+}
+
+span.success {
+    color: green;
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: block;
+    margin-top: 10px;
+}

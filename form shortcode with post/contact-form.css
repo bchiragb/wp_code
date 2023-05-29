@@ -1,0 +1,25 @@
+/* Add margins between the rows of the contact form. */
+#contact-form .form-section{
+	margin: 20px 0;
+}
+
+/* Make the input field large as the form container. */
+#contact-form input[type="text"]{
+	width: 100%;
+}
+
+/* Style the validation errors */
+.validation-message{
+	margin: 20px 0;
+	padding: 10px 20px;
+	background: #fff;
+	border: 3px solid #cc0000;
+}
+
+/* Style the success message */
+.success-message{
+	margin: 20px 0;
+	padding: 10px 20px;
+	background: #fff;
+	border: 3px solid #00cc00;
+}

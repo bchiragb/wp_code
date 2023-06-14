@@ -3,8 +3,8 @@
 add_shortcode( 'my-contact-form', 'my_contact_form' );
 add_action( 'wp_enqueue_scripts', 'my_contact_form_scripts' );
 add_action( 'wp_enqueue_scripts', 'my_contact_form_styles' );
-add_action( 'wp_ajax_my_ajax_request', 'my_ajax_request' );
-add_action('wp_ajax_nopriv_my_ajax_request', 'my_ajax_request');
+add_action( 'wp_ajax_my_ajax_request', 'my_ajax_request' ); //logged-in users
+add_action('wp_ajax_nopriv_my_ajax_request', 'my_ajax_request'); //logged-out users
 
 function my_contact_form() { ?>
 	<form id="my-contact-form" action="<?php echo esc_url( get_permalink() ); ?>" method="post">

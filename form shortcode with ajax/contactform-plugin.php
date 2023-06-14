@@ -57,8 +57,8 @@ function my_contact_form_styles() {
 }
 
 
-add_action( 'wp_ajax_my_ajax_request', 'my_ajax_request' );
-add_action('wp_ajax_nopriv_my_ajax_request', 'my_ajax_request');
+add_action( 'wp_ajax_my_ajax_request', 'my_ajax_request' ); //logged-in users
+add_action('wp_ajax_nopriv_my_ajax_request', 'my_ajax_request'); //logged-out users
 function my_ajax_request() {
 	$to = $_POST["c_em"];
     $subject = $_POST["c_nm"];

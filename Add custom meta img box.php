@@ -1,5 +1,5 @@
 <?php
-//add custom img box in post ------------------------------------ 
+//add custom img box in post ------------------------------------  backend-code 
 add_action( 'add_meta_boxes', 'listing_image_add_metabox' );
 function listing_image_add_metabox () {
     add_meta_box( 'listingimagediv', __( 'Video/GIF/WEBP', 'text-domain' ), 'listing_image_metabox', 'post', 'side', 'low');
@@ -118,7 +118,7 @@ function alter_att_attributesx($attr) {
         return $attr;
     }
 }
-//add_filter('wp_get_attachment_image_attributes', 'alter_att_attributesx');
+//add_filter('wp_get_attachment_image_attributes', 'alter_att_attributesx');  //frontend-code
 
 function gv_filter_admin_post_thumbnail_html($output, $post_id, $thumbnail_id = ""){ $new_thumbnailxx = "";
     if(!is_admin()){   
@@ -142,7 +142,5 @@ function gv_filter_admin_post_thumbnail_html($output, $post_id, $thumbnail_id = 
         return $output;
     }
 }
-//add_filter('post_thumbnail_html', 'gv_filter_admin_post_thumbnail_html', 10, 3);
-
-
+//add_filter('post_thumbnail_html', 'gv_filter_admin_post_thumbnail_html', 10, 3);  //frontend-code
 ?>

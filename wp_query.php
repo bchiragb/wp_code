@@ -59,8 +59,9 @@ echo $wpdb->print_error();
 echo $wpdb->show_errors();
 echo $wpdb->last_query;
 
-
-
+//=========================================================================================
+=> protecting the code from SQL injection
+//PHP - mysql_real_escape_string($_GET['id']);	
 %s – string (value is escaped and wrapped in quotes)
 %d – integer
 %f – float

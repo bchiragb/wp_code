@@ -21,4 +21,12 @@ function custom_admin_js() {
 
 add_action('admin_footer', 'custom_admin_js');
 
+
+// =========================================================================================== css, js
+function admin_enqueue_scripts() {
+	wp_enqueue_script( 'custom-js', plugin_dir_url( __FILE__ ) . 'js/custom.js', array( 'jquery' ), '', true );
+	wp_enqueue_style( 'style-css', plugin_dir_url( __FILE__ ) . 'css/custom.css' );
+}
+add_action( 'admin_enqueue_scripts', 'admin_enqueue_scripts');
+
 ?>

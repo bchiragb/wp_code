@@ -7,7 +7,7 @@ $(document).on('submit','form#my-contact-form',function(){
   if(c_em == "") { alert("enter email");  return false; }
   if(c_ms == "") { alert("enter message");  return false; }
 
-  var formData = { c_nm: c_nm, c_em: c_em, c_ms: c_ms, action: 'my_ajax_request' }
+  var formData = { c_nm: c_nm, c_em: c_em, c_ms: c_ms, nonce: ajax_nonce, action: 'my_ajax_request' }
   
   $.ajax({
     type: "POST",

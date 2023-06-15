@@ -38,6 +38,7 @@ function my_contact_form_scripts() {
 
     ?><script type="text/javascript">
     var ajax_url = '<?php echo admin_url( "admin-ajax.php" ); ?>';
+    var ajax_nonce = '<?php echo wp_create_nonce( "ajax-nonce" ); ?>';
     </script><?php
 }
 
@@ -49,7 +50,8 @@ function my_contact_form_styles() {
 
 
 function my_ajax_request() {
-	$to = $_POST["c_em"];
+    if (!wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) { die('Busted!'); }
+    $to = $_POST["c_em"];
     $subject = $_POST["c_nm"];
     $headers = "Testing";
     $message = $_POST["c_ms"];

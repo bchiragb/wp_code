@@ -37,22 +37,23 @@ function my_contact_form() { ?>
 }
 
 function my_contact_form_scripts() {
-	wp_enqueue_script( 'my-contact-form2',
+     wp_enqueue_script( 'my-contact-form2',
     'https://code.jquery.com/jquery-3.7.0.min.js',
     array(), '', true);
 
     wp_enqueue_script( 'my-contact-form',
-    get_template_directory_uri() . '/js/my-contact-form.js',
+    plugin_dir_url(__FILE__ ).'js/my-contact-form.js',
     array(), '1.00', true);
 
     ?><script type="text/javascript">
     var ajax_url = '<?php echo admin_url( "admin-ajax.php" ); ?>';
+    var ajax_nonce = '<?php echo wp_create_nonce( "ajax-nonce" ); ?>';
     </script><?php
 }
 
 function my_contact_form_styles() {
     wp_enqueue_style( 'my-contact-form', 
-	get_template_directory_uri() . '/css/my-contact-form.css',
+	plugin_dir_url(__FILE__ ).'css/my-contact-form.css',
     array(), '1.00', 'all');
 }
 
@@ -60,7 +61,10 @@ function my_contact_form_styles() {
 add_action( 'wp_ajax_my_ajax_request', 'my_ajax_request' ); //logged-in users
 add_action('wp_ajax_nopriv_my_ajax_request', 'my_ajax_request'); //logged-out users
 function my_ajax_request() {
-	$to = $_POST["c_em"];
+   if (!wp_verify_nonce( $_POST['nonce'], 'ajax-nonce' ) ) {
+        die('Busted!');
+    }
+    $to = $_POST["c_em"];
     $subject = $_POST["c_nm"];
     $headers = "Testing";
     $message = $_POST["c_ms"];

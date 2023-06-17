@@ -1,5 +1,4 @@
 <?php
-
 //========================================== contact us
 add_shortcode( 'contact-form', 'display_contact_form' );
 

@@ -6,7 +6,7 @@ Description: A Plugin For WordPress login [custom_login], register [custom_regis
 Author: Chirag Baldaniya
 Author URI: https://github.com/bchiragb
 Version: 1.0.0
-*/
+*/  
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

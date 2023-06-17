@@ -1,4 +1,4 @@
-$(document).on('submit','form#my-contact-form',function(){
+$(document).on('submit','form#my-contact-form',function(){ 
   var c_nm = $("#full-name").val();
   var c_em = $("#email").val();
   var c_ms = $("#message").val();

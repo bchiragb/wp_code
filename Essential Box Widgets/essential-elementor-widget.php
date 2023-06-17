@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Essential Box Widgets
  * Description: Custom widgets from elementor.

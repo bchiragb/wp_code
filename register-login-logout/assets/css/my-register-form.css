@@ -1,0 +1,12 @@
+#register_forms div { margin-bottom:2px; } 
+#register_forms	input{  margin-bottom:4px;  }  
+#register_forms div strong { color:red; }
+
+
+#login_forms div { margin-bottom:2px; } 
+#login_forms input{  margin-bottom:4px;  }  
+#login_forms div strong { color:red; }
+
+#forgot_forms div { margin-bottom:2px; } 
+#forgot_forms input{  margin-bottom:4px;  }  
+#forgot_forms div strong { color:red; }

@@ -10,7 +10,7 @@ Version: 1.0.0
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
+}  
 
 //==================================================================================== css, js
 add_action('wp_enqueue_scripts', 'my_form_scripts');

@@ -62,3 +62,36 @@ get_home_url();  / get_site_url();
 get_template_directory();
 plugin_dir_path( __FILE__ ); 
 plugin_dir_path( __DIR__ ); 
+
+
+//-------------------------------------------------------------------------------------  wp function
+
+register_rest_route();  -- for api
+add_shortcode(); -- create shortcode
+wp_hanle_upload(); -- file upload
+add_meta_box(); -- create custom meta box
+admin_enqueue_script(); -- add css, js for admin panel
+wp_enqueue_script(); -- add js for frontview
+wp_enqueue_style(); -- add css for frontview
+wp_head(); -- add css, js, style data in header section
+wp_footer(); -- add css, js, style data in footer section
+wp_register_style(); -- register style then use with name
+wp_register_script(); -- register script then use with name
+add_menu_page(); -- add main menu for customization / plugin
+add_submenu_page();  -- add submain menu of main menu for customization / plugin
+wp_ajax_myajaxcall -- for get ajax request for login user
+wp_ajax_nopriv_myajaxcall -- for get ajax request for not login user
+is_plugin_active(); -- check plugin active or not
+deactive_plugin(); -- for deactive plugin
+register_active_hook(); -- for plugin when plugin activate
+register_deactive_hook(); -- for plugin when plugin deactivate
+wp_insert_user(); -- insert new user
+is_user_logged_in(); -- check user is login or not
+wp_logout_url(); -- link for logout
+wp_login_url(); -- link for logout
+wp_signon(); -- login user
+wp_generate_password(); -- for create new password
+email_exists(); -- email exist in db
+username_exists(); -- username exist in db
+is_wp_error(); -- check / get / save error
+get_option(); -- get setting menu details

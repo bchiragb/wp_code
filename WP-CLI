@@ -1,0 +1,127 @@
+Install WP-CLI
+==============================================================================================
+
+A. Install WP-CLI in windows with wamp or xampp
+------------------------------------------
+1. Download file from here
+https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+2. Create directory at root of c: with name "wp-cli"
+then paste download file inside it
+
+3. create ine file with name of "wp.bat"
+inside this file paste this 2 line code 
+@ECHO OFF
+php “c:\wpcli\wp-cli.phar” %*
+
+4. set path
+Control Panel\System and Security\System > Advanced system settings > Environment Variables
+then open system variable > path > edit
+click new then paste wp-cli path like this C:\wp-cli\
+then save or ok
+Note: chek your php path
+
+5. open your wordpress (root path) in cmd
+then run this command wp --info
+
+
+B. Install WP-CLI in linux
+------------------------------------------
+1. curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+2. php wp-cli.phar --info
+3. chmod +x wp-cli.phar
+4. sudo mv wp-cli.phar /usr/local/bin/wp
+5. wp --info
+
+
+
+
+Command
+==============================================================================================
+
+A. WordPress installation via WP-CLI
+------------------------------------------
+1. wp core download
+   Use: download wordpress
+2. wp config create --dbname=testing --dbuser=wp --dbpass=securepswd --locale=ro_RO
+   Use: add data into config file
+   (admin user credentials can get stored in the bash shell history)
+   ------
+   wp core config --dbname=mydbname --dbuser=mydbuser --dbpass=mydbpass --dbhost=localhost --dbprefix=whebfubwef_ --extra-php <<PHP
+   define( 'WP_DEBUG', true );
+   define( 'WP_DEBUG_LOG', true );
+   PHP
+3. wp db create
+   Use: create database
+4. wp core install --url=your_domain --title=Your_Blog_Title --admin_user=username --admin_password=password --admin_email=your_email.com
+   Use: file badic data and run installation
+
+
+B. WordPress Theme via WP-CLI
+------------------------------------------
+1. wp theme install twentytwentytwo
+   Use: install theme
+   (make sure theme name must same as show in url)
+2. wp theme activate twentytwentytwo
+   Use: active theme
+3. wp theme deactivate twentytwentytwo
+   Use: deactive theme
+4. wp theme status twentytwentytwo
+   Use: active or not active status with basic theme info
+
+
+C. Plugin Theme via WP-CLI
+------------------------------------------
+1. wp plugin install woocommerce
+   Use: install plugin
+2. wp plugin activate woocommerce
+   Use: active plugin
+3. wp plugin deactivate woocommerce
+   Use: deactive plugin
+4. wp plugin status woocommerce
+   Use: active or not active status with basic plugin info  
+5. wp plugin list
+   Use: show list of all plugin
+6. wp plugin install woocommerce --version=4.8 --activate
+   Use: install plugin with old version and activate 
+7. wp plugin deactivate --all
+   Use: deactivate all plugin
+8. wp plugin update woocommerce
+   Use: update woocommerce plugin
+
+
+D. WordPress Core / WP-CLI
+------------------------------------------
+01. wp core version
+    Use: show wordpress version
+02. wp core update
+    Use: update wordpress version   
+03. wp cli version
+    Use: show cli version
+04. wp option update home 'http://example.com'
+    Use: update home url	
+05. wp option update siteurl 'http://example.com'
+    Use: update site url	
+06. wp cron event list
+    Use: show list of cron event
+07. wp maintenance-mode activate
+    Use: maintenance on
+08. wp maintenance-mode deactivate
+    Use: maintenance off
+09. wp maintenance-mode status
+    Use: maintenance status
+10. wp cli update
+    Use: update cli version
+11. wp post create --post_type=page --post_status=publish --post_title='My test post' --post_content='This is a test post'
+    Use: create new post
+12. wp post delete 18
+    Use: delete post
+12. wp db export
+    Use: database export
+
+
+
+Find any command syntax then use with help command like... wp help db export    
+
+There are also lots of command and some special command of woocommerce also.
+For more command: https://developer.wordpress.org/cli/commands/

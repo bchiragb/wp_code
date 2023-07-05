@@ -95,3 +95,15 @@ email_exists(); -- email exist in db
 username_exists(); -- username exist in db
 is_wp_error(); -- check / get / save error
 get_option(); -- get setting menu details
+get_template_part(); -- get call template file with name also
+get_theme_mod(); -- get theme related setting
+esc_html__(); -- for html, decode html tag, run with echo 
+esc_html_e(); -- same as esc_html but dont need to write echo
+esc_attr__(); -- for attribute,  decode html tag, run with echo
+esc_attr_e(); -- same as esc_attr but dont need to write echo
+current_user_can(); -- user have access for specific operation
+wp_kses(); -- filter/sanatize html data
+sprintf(); -- implementation and combine
+__(); -- returns a translatable string
+_e(); -- returns a translatable string without echo 
+_x(); -- returns a translatable string with a given context
